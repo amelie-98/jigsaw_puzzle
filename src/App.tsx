@@ -18,7 +18,7 @@ const App: React.FC = () => {
   const [mode, setMode] = useState('');
   const [image, setImage] = useState(0);
 
-  (!mode || !image) && history.push('/');
+  (!mode || !image) && window.location.href.slice(-9) === 'play-game' && history.push('/');
 
   let numberPart: number;
 
@@ -60,7 +60,7 @@ const App: React.FC = () => {
     ) {
       setMode('');
       setImage(0);
-      window.location.href = 'http://localhost:3000/play-game/win';
+      window.location.href = `${window.location.origin}/play-game/win`;
     }
   }, [numberPart, arrayIndexPartDrop]);
 

@@ -20,7 +20,7 @@ const CountDown: React.FC<Iprops> = (props: Iprops) => {
   }, [time]);
 
   useEffect(() => {
-    time <= 0 && (window.location.href = 'http://localhost:3000/play-game/lose');
+    time <= 0 && (window.location.href = `${window.location.origin}/play-game/lose`);
   }, [time]);
 
   const style: any = useMemo(() => {
